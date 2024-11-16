@@ -54,7 +54,7 @@ input {
     border-radius: 4px;
     height: 30px;
     width: 250px;
-    font-size: 12px;
+    font-size: 16px;
     
 }
 
@@ -73,4 +73,15 @@ button:hover {
     background-color: #0056b3;
 }
 
+input[type="checkbox"] {
+    height: 16px;
+    width: 16px;
+    position: absolute;
+    margin-top: 1px;
+}
+
+h4 {
+    font-size: 15px;
+    margin-left: 150px;
+}
 

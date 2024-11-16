@@ -32,18 +32,23 @@
 </head>
 
 <body>
-
+    
     <div class="login-container">
         <h5>Student Enrollment Evaluation</h5>
         <img src="./images/nbsc-logo.png" alt="School Logo" class="school-logo">
-        <form>
+        <form onsubmit="return validateLogin()">
             <label for="student-id">Student ID:</label>
             <input type="text" id="student-id" name="student-id" required>
             <label for="password">Password:</label>
             <input type="password" id="password" name="password" required>
+            <div>
+                <input type="checkbox" id="show-password" onclick="togglePasswordVisibility()">
+                <h4>Show Password</h4>
+            </div>
             <button type="submit">Login</button>
         </form>
     </div>
+    
 </body>
 
 </html>

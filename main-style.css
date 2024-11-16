@@ -13,3 +13,7 @@ h5 {
 .dropdown {
     display:flex;
 }
+
+.collapse {
+    margin-left: 2rem;
+}
