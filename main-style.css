@@ -1,0 +1,15 @@
+/* Main Page */
+
+.navbar {
+    background: linear-gradient(to right, #0043ae, #00235d);
+    margin: auto;
+}
+
+h5 {
+    color: white;
+    display: inline-flex;
+}
+
+.dropdown {
+    display:flex;
+}
