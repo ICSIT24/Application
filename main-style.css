@@ -15,7 +15,7 @@ h5 {
 }
 
 .collapse {
-    margin-left: 2rem;
+    justify-content: right;
 }
 
 .profile-pic {
@@ -25,4 +25,46 @@ h5 {
     margin-top: 0.5rem;
     display: flex
 }
+
+.introduction {
+    margin-top: 150px;
+    display:block;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    font-family: Arial, sans-serif;
+}
+
+.introduction p {
+    font-size: 20px;
+    margin: auto;
+    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif
+}
+
+.introduction h1 {
+    font-weight: bold;
+    margin-bottom: 3rem;
+    font-size: 40px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+.btn {
+    font-size: 20px;
+    font-weight:bolder;
+    padding: 20px;
+    background-color: #007BFF;
+    color: white;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    margin: 20px auto;
+    
+}
+
+.combobox {
+    font-size: 20px;
+    margin-top: 2rem;
+}
+
+
 
