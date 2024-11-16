@@ -8,7 +8,7 @@ function validateLogin() {
         alert("Please Enter All Fields");
         return false;
     } else if (password !== correctPassword) {
-        alert("Invalid Password");
+        alert("Invalid ID/Password");
         return false;
     } else if (studentId === correctStudentId && password === correctPassword) {
         alert("You have successfully logged in");

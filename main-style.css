@@ -11,9 +11,18 @@ h5 {
 }
 
 .dropdown {
-    display:flex;
+    display: flex;
 }
 
 .collapse {
     margin-left: 2rem;
 }
+
+.profile-pic {
+    width: 100px;
+    height: 100px;
+    margin-bottom: 1rem;
+    margin-top: 0.5rem;
+    display: flex
+}
+
