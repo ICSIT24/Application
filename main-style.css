@@ -10,6 +10,7 @@ h5 {
     display: inline-flex;
 }
 
+
 .dropdown {
     display: flex;
 }
@@ -64,7 +65,9 @@ h5 {
 .combobox {
     font-size: 20px;
     margin-top: 2rem;
+    
 }
+
 
 
 
