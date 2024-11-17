@@ -156,3 +156,11 @@ tr {
     margin-left: 1rem;
 
 }
+
+.section {
+    justify-content: center;
+    margin-top: 50px;
+    display: flex;
+    margin-right: 65rem;
+    font-weight: bolder;
+}
