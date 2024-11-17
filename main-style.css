@@ -11,12 +11,12 @@ h5 {
 }
 
 h2 {
-    text-align:center;
+    text-align: center;
     margin-top: 2rem;
     font-weight: bolder;
     font-size: 25px;
     margin-right: 59rem;
-    
+
 }
 
 .dropdown {
@@ -84,15 +84,15 @@ table {
     width: 80rem;
     justify-content: center;
     margin-top: 50px;
-    
+
 }
 
 th {
-    text-align:center;
+    text-align: center;
     height: 3rem;
     font-size: 1.2rem;
     background-color: rgba(128, 128, 128, 0.604);
-    
+
 }
 
 td {
@@ -100,8 +100,8 @@ td {
     padding: 10px;
     text-align: center;
     line-height: 20px;
-    font-family:Arial, Helvetica, sans-serif;
-    
+    font-family: Arial, Helvetica, sans-serif;
+
 }
 
 tr {
@@ -119,4 +119,40 @@ tr {
 
 .button:hover {
     background-color: #0056b3;
+}
+
+/*Table in Grades*/
+
+.code {
+    width: 10px;
+    padding: 1rem;
+}
+
+.subject {
+    width: 20rem;
+    padding: 1rem;
+}
+
+.grades {
+    width: 10px;
+    padding: 1rem;
+}
+
+.instructor {
+    width: 20rem;
+    padding: 1rem;
+}
+
+.school-year-semester {
+    justify-content: center;
+    margin-top: 50px;
+    display: flex;
+    margin-right: 51rem;
+    font-weight: bolder;
+
+}
+
+.semester {
+    margin-left: 1rem;
+
 }
