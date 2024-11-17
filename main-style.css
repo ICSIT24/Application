@@ -10,6 +10,14 @@ h5 {
     display: inline-flex;
 }
 
+h2 {
+    text-align:center;
+    margin-top: 2rem;
+    font-weight: bolder;
+    font-size: 25px;
+    margin-right: 59rem;
+    
+}
 
 .dropdown {
     display: flex;
@@ -29,7 +37,7 @@ h5 {
 
 .introduction {
     margin-top: 150px;
-    display:block;
+    display: block;
     justify-content: center;
     align-items: center;
     text-align: center;
@@ -39,7 +47,7 @@ h5 {
 .introduction p {
     font-size: 20px;
     margin: auto;
-    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif
 }
 
 .introduction h1 {
@@ -51,7 +59,7 @@ h5 {
 
 .btn {
     font-size: 20px;
-    font-weight:bolder;
+    font-weight: bolder;
     padding: 20px;
     background-color: #007BFF;
     color: white;
@@ -59,15 +67,56 @@ h5 {
     border-radius: 10px;
     cursor: pointer;
     margin: 20px auto;
-    
+
 }
 
 .combobox {
     font-size: 20px;
     margin-top: 2rem;
+
+}
+
+/*Table*/
+
+table {
+    margin: auto;
+    border-collapse: collapse;
+    width: 80rem;
+    justify-content: center;
+    margin-top: 50px;
     
 }
 
+th {
+    text-align:center;
+    height: 3rem;
+    font-size: 1.2rem;
+    background-color: rgba(128, 128, 128, 0.604);
+    
+}
 
+td {
+    border: 1px solid gray;
+    padding: 10px;
+    text-align: center;
+    line-height: 20px;
+    font-family:Arial, Helvetica, sans-serif;
+    
+}
 
+tr {
+    height: 10px;
+}
 
+.button {
+    padding: 10px 15px;
+    background-color: #007BFF;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+
+}
+
+.button:hover {
+    background-color: #0056b3;
+}
