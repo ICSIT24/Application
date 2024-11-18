@@ -1,0 +1,27 @@
+[
+    { 
+        "latitude": 8.3593220,
+        "longitude": 124.8691061,
+        "classroom": "Registrar"
+    },
+    {
+        "latitude": 8.3605454,
+        "longitude": 124.8675960,
+        "classroom": "SAS"
+    },
+    {
+        "latitude":8.359179, 
+        "longitude":124.868468,
+        "classroom":"BA 302"
+    },
+    { 
+        "latitude":8.3604764, 
+        "longitude": 124.86752632,
+        "classroom":"ASO"
+    },
+    {
+        "latitude":8.3596696, 
+        "longitude":124.8691893,
+        "classroom":"IT Evaluation and Dean"
+    }
+]

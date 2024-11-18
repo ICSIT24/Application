@@ -18,7 +18,6 @@ class LeafletMap {
             // Store clicked marker in localStorage
             localStorage.setItem('clickedMarker', classroom);
             // Navigate to the classroom page
-            window.location.href = 'Classroom.html';
         });
         
         marker.bindPopup(classroom);
