@@ -47,7 +47,7 @@
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse" id="navbarNavDropdown">
-               
+
                 <li class="nav-item dropdown" style="margin-left: 1rem;">
                     <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
                         aria-expanded="false">
@@ -60,12 +60,12 @@
                     </a>
                     <ul class="dropdown-menu text-left"
                         style="width: 200px; padding: 1rem; position: absolute; left: -10rem;">
-                      
+
                         <li><strong>Evaluator</strong></li>
-                            <hr class="dropdown-divider">
-                        </li>
-                        <li><a class="dropdown-item" href="./index.html">Log Out</a></li>
-                    </ul>
+                        <hr class="dropdown-divider">
+                </li>
+                <li><a class="dropdown-item" href="./index.html">Log Out</a></li>
+                </ul>
                 </li>
             </div>
         </div>
@@ -73,19 +73,79 @@
 
     <!--Aside-->
 
-    <div class="aside">
-        <img src="./images/nbsc-logo.png" alt="School Logo">
-        <p>Account: </p>
-        <p>Course: </p>
-    <div class="button-margin">
-        <a href="student-info.html" class="button">Student Information</a>
-        <a href="grades.html" class="button">Section Management</a>
-        <a href="schedule.html" class="button">Student Confirmations</a>
-        <a href="contact.html" class="button">Manage Enrollment</a>
+    <div style="display: flex;">
+        <aside class="aside">
+            <img src="./images/nbsc-logo.png" alt="School Logo">
+            <p>Account: </p>
+            <p>Course: </p>
+            <div class="button-margin">
+                <a href="student-info.html" class="button1">Student Information</a>
+                <a href="grades.html" class="button1">Section Management</a>
+                <a href="schedule.html" class="button1">Student Confirmations</a>
+                <a href="contact.html" class="button1">Manage Enrollment</a>
+            </div>
+        </aside>
+
+        <!--Table-->
+
+        <div style="flex-grow: 1; margin:5rem">
+
+            <div style="display:flex; margin-right: 60rem; justify-content: center;">
+
+                <input type="text" id="additionalInfo" placeholder="">
+
+                <div class="option1" style="margin-left: 1rem;">
+                    <label for="option"></label>
+                    <select id="option" name="option">
+                        <option value="fall">Enrollment</option>
+                    </select>
+                </div>
+
+                <div class="option2" style="margin-left: 1rem; ">
+                    <label for="option"></label>
+                    <select id="option" name="option">
+                        <option value="fall">1st Year</option>
+                    </select>
+                </div>
+                <div class="option2" style="margin-left: 1rem;">
+                    <label for="option"></label>
+                    <select id="option" name="option">
+                        <option value="fall">1st Semester</option>
+                    </select>
+                </div>
+
+            </div>
+
+            <table class="table-primary">
+                <tr class="label">
+                    <!--Row Label-->
+                    <th>Student_ID</th>
+                    <th>Year Level</th>
+                    <th>Semester</th>
+                    <th>Subject</th>
+                    <th>Prelim</th>
+                    <th>Midterm</th>
+                    <th>Final</th>
+                    <th>Remarks</th>
+                    <th>Instructor</th>
+                </tr>
+                <!--Row Contents-->
+                <tr>
+                    <td>N/A</td>
+                    <td>N/A</td>
+                    <td>N/A</td>
+                    <td>N/A</td>
+                    <td>N/A</td>
+                    <td>N/A</td>
+                    <td>N/A</td>
+                    <td>N/A</td>
+                    <td>N/A</td>
+                </tr>
+
+            </table>
+
+        </div>
     </div>
-
- 
-
 
 </body>
 

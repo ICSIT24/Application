@@ -25,7 +25,7 @@
     margin-top: 3rem;
 }
 
-.button {
+.button1 {
 
     margin: 5px;
     width: 100%;
@@ -40,7 +40,7 @@
     font-weight: bolder;
 }
 
-.button:hover {
+.button1:hover {
     background-color: #bcbcbc;
 }
 
@@ -67,4 +67,51 @@ h5 {
 /*Table*/
 
 
+table {
+    margin: auto;
+    border-collapse: collapse;
+    width: 90rem;
+    justify-content: center;
+    margin-top: 50px;
+}
 
+
+th {
+    text-align: center;
+    height: 3rem;
+    font-size: 1.2rem;
+    background-color:  #0043ae9d;
+
+}
+
+td {
+    border: 1px solid gray;
+    padding: 10px;
+    text-align: center;
+    line-height: 20px;
+    font-family: Arial, Helvetica, sans-serif;
+
+}
+
+tr {
+    height: 10px;
+}
+
+.button2 {
+    left: 103rem;
+    margin: auto;
+    margin-top: -30px;
+    position:absolute;
+    padding: 1rem;
+    text-decoration: none;
+    color: #00235d;
+    background-color: #d0d0d0;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+    font-weight: bolder;
+    font-size: 20px;
+}
+
+.button2:hover {
+    background-color: #bcbcbc;
+}
