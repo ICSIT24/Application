@@ -13,7 +13,7 @@ function validateLogin() {
     } else if (studentId === correctStudentId && password === correctPassword) {
         alert("You have successfully logged in");
         // Proceed to the next page
-        window.location.href = "main-page1.html"; // Replace with your next page URL
+        window.location.href = "./Student_interface/main-page1.html"; // Replace with your next page URL
         return false; // Prevent form submission
     }
 }
