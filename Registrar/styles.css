@@ -16,7 +16,7 @@
 }
 
 .aside img {
-    
+
     position: relative;
     width: 100px;
     height: 100px;
@@ -124,9 +124,38 @@ tr {
     font-size: 20px;
 }
 
+.button3 {
+    right: -1rem;
+    margin: auto;
+    width: 14rem;
+    position: absolute;
+    padding: 1rem;
+    text-decoration: none;
+    color: #00235d;
+    background-color: #d0d0d0;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+    font-weight: bolder;
+    font-size: 20px;
+
+}
+
+.sep-button {
+    padding-top: 1px;
+    height: 2rem;
+    margin-left: 135px;
+    top: 95px;
+    position: absolute;
+}
+
 .button2:hover {
     background-color: #bcbcbc;
 }
+
+.button3:hover {
+    background-color: #bcbcbc;
+}
+
 
 /*Right Aside*/
 
@@ -142,6 +171,16 @@ tr {
     justify-content: center;
 }
 
+.combo-box2 {
+    margin-bottom: 5rem;
+    position: relative;
+    margin-left: 13rem;
+    display: flex;
+    margin-right: 65rem;
+    justify-content: center;
+}
+
+
 .form-info {
     display: block;
     background-color: #dddddd;
@@ -156,7 +195,7 @@ tr {
 }
 
 
-.form-info label{
+.form-info label {
     font-weight: bolder;
 
 }
@@ -174,7 +213,19 @@ input {
     height: 30px;
     width: 250px;
     font-size: 16px;
-    
+
+}
+
+.input2 {
+    display: block;
+    margin: 1rem;
+    margin-bottom: 5px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    height: 30px;
+    width: 250px;
+    font-size: 16px;
+
 }
 
 button {
