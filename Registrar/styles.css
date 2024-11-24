@@ -186,6 +186,22 @@ tr {
 
 }
 
+.button5 {
+    left: 88rem;
+    margin: auto;
+    width: 14rem;
+    position: absolute;
+    padding: 1rem;
+    text-decoration: none;
+    color: #00235d;
+    background-color: #d0d0d0;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+    font-weight: bolder;
+    font-size: 20px;
+
+}
+
 .sep-button {
     padding-top: 1px;
     height: 2rem;
@@ -203,6 +219,10 @@ tr {
 }
 
 .button4:hover {
+    background-color: #bcbcbc;
+}
+
+.button5:hover {
     background-color: #bcbcbc;
 }
 
@@ -235,6 +255,21 @@ tr {
     justify-content: center;
 }
 
+
+.combo-box3 {
+    width: 50rem;
+    position: relative;
+    margin-left: -7rem;
+    display: flex;
+    margin-right: 10rem;
+    justify-content: center;
+    
+}
+
+.combo-box3 p {
+  margin-top: 1rem;
+  
+}
 
 .form-info {
     display: block;

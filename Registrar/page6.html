@@ -72,7 +72,7 @@
     <!--Aside-->
 
     <div style="display: flex;">
-        <aside class="aside">
+        <aside class="aside2">
             <img src="./images/nbsc-logo.png" alt="School Logo">
             <h3>NBSC Registrar</h3>
             <div class="button-margin">
@@ -85,41 +85,22 @@
 
         <!--Table-->
 
-        <div class="con-table" style="flex-grow: auto; margin:2rem">
+        <div class="con-table3" style="flex-grow: auto; margin:2rem">
 
             <div class="combo-box3">
                 <input type="text" id="additionalInfo" placeholder="">
+                <p><strong>Clearance Search Result: </strong> <i class="fa fa-italic">None Selected</i></p>
 
-                <div class="option1" style="margin-left: 1rem;">
-                    <label for="option"></label>
-                    <select id="option" name="option">
-                        <option value="fall">Option1</option>
-                    </select>
-                </div>
-
-                <div class="option1" style="margin-left: 1rem;">
-                    <label for="option"></label>
-                    <select id="option" name="option">
-                        <option value="fall">Enrollment</option>
-                    </select>
-                </div>
-
-                <a href="contact.html" class="button2"><Data>Delete</Data></a>
+                <a href="contact.html" class="button5"><Data>Generate Clearance</Data></a>
 
             </div>
 
-
-
-            <table class="table">
+            <table class="table2">
                 <tr class="label">
                     <!--Row Label-->
-                    <th class="col2">Student_ID</th>
+                    <th class="col2">Section_ID</th>
                     <th class="col2">Name</th>
-                    <th class="col2">Age</th>
-                    <th class="col2">Birthday</th>
-                    <th class="col2">Email</th>
-                    <th class="col2">Contact#</th>
-                    <th class="col2">Section</th>
+                    <th class="col2">Course</th>
                     <th class="col2">Status</th>
                 </tr>
                 <!--Row Contents-->
@@ -128,46 +109,10 @@
                     <td>N/A</td>
                     <td>N/A</td>
                     <td>N/A</td>
-                    <td>N/A</td>
-                    <td>N/A</td>
-                    <td>N/A</td>
-                    <td>N/A</td>
                 </tr>
             </table>
 
         </div>
-
-        <form class="form-info" style="flex-grow: 1;">
-            <div class="margin-top">
-                <label for="firstname">Firstname</label>
-                <button style="padding-top: 1px;height: 2rem;margin-left: 135px; top: 95px; position: absolute;" type="submit">Clear</button>
-                <input type="text" id="firstname" name="firstname" required>
-
-                <label for="middlename">Middlename</label>
-                <input class="input" type="text" id="middlename" name="middlename" required>
-
-                <label for="lastname">Lastname</label>
-                <input type="text" id="lastname" name="lastname" required>
-
-                <label for="email">Email</label>
-                <input type="email" id="email" name="email" required>
-
-                <label for="contact">Contact#</label>
-                <input type="tel" id="contact" name="contact" required>
-
-                <label for="birthday">Birthday</label>
-                <input type="date" id="birthday" name="birthday" required>
-
-                <label for="age">Age</label>
-                <input type="number" id="age" name="age" required>
-
-                <label for="course">Course</label>
-                <input type="text" id="course" name="course" required>
-            </div>
-            <button type="submit">Register</button>
-        </form>
-
-    </div>
 
 
 </body>
