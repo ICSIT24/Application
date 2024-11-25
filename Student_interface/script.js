@@ -31,3 +31,14 @@ function togglePasswordVisibility() {
         passwordField.type = "password";
     }
 }
+
+
+function changeLabel() {
+    var dropdown = document.querySelector('.login-dropdown');
+    var label = document.getElementById('student-id-label');
+    if (dropdown.value === 'registrar' || dropdown.value === 'evaluator') {
+        label.textContent = 'Username:';
+    } else {
+        label.textContent = 'Student ID:';
+    }
+}
