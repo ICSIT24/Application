@@ -1,3 +1,6 @@
+<?php
+include('../db_connection.php');
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -24,7 +27,7 @@
     <!-- Css and Javacript Link-->
 
     <Link rel="stylesheet" href="./styles.css">
-    <script src="script.js"></script>
+    <script src="age.js"></script>
 
 
     <title>PROJECT EVENT DRIVEN PROGRAMMING</title>
@@ -107,34 +110,31 @@
                 <a href="contact.html" class="button2"><Data>Delete</Data></a>
 
             </div>
-
-
-
             <table class="table">
                 <tr class="label">
-                    <!--Row Label-->
                     <th class="col2">Student_ID</th>
                     <th class="col2">Name</th>
                     <th class="col2">Age</th>
                     <th class="col2">Birthday</th>
                     <th class="col2">Email</th>
                     <th class="col2">Contact#</th>
-                    <th class="col2">Section</th>
                     <th class="col2">Status</th>
                 </tr>
-                <!--Row Contents-->
-                <tr>
-                    <td>N/A</td>
-                    <td>N/A</td>
-                    <td>N/A</td>
-                    <td>N/A</td>
-                    <td>N/A</td>
-                    <td>N/A</td>
-                    <td>N/A</td>
-                    <td>N/A</td>
-                </tr>
+            
+                <?php
+                foreach ($students as $student) {
+                    echo "<tr>";
+                    echo "<td>" . $student['Student_id'] . "</td>";
+                    echo "<td>" . $student['Name'] . "</td>";
+                    echo "<td class='age'></td>";  // Placeholder for age
+                    echo "<td>" . $student['Birthday'] . "</td>";
+                    echo "<td>" . $student['Email'] . "</td>";
+                    echo "<td>" . $student['Contact'] . "</td>";
+                    echo "<td>" . $student['Status'] . "</td>";
+                    echo "</tr>";
+                }
+                ?>
             </table>
-
         </div>
 
         <form class="form-info" style="flex-grow: 1;">
