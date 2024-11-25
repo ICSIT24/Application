@@ -23,7 +23,7 @@
 
     <!-- Css and Javacript Link-->
 
-    <Link rel="stylesheet" href="./Student_interface/login-style.css">
+    <Link rel="stylesheet" href="./login-style.css">
     <script src="./Student_interface/script.js"></script>
 
 
@@ -37,7 +37,15 @@
         <h5>Student Enrollment Evaluation</h5>
         <img src="./images/nbsc-logo.png" alt="School Logo" class="school-logo">
         <form onsubmit="return validateLogin()">
-            <label for="student-id">Student ID:</label>
+    
+            <label class="login-text">Login as</label>
+            <select class="login-dropdown" onchange="changeLabel()">
+                <option value="student" href="./index.html">Student</option>
+                <option value="registrar">Registrar Employee</option>
+                <option value="evaluator">Evaluator</option>
+            </select>
+    
+            <label for="student-id" id="student-id-label">Student ID:</label>
             <input type="text" id="student-id" name="student-id" required>
             <label for="password">Password:</label>
             <input type="password" id="password" name="password" required>
