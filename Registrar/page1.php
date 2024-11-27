@@ -132,12 +132,6 @@ include('../db_connection.php');
                             <label for="age" class="form-label">Age</label>
                             <input type="number" id="age" name="age" class="form-control" required>
                         </div>
-
-                        <div class="mb-3">
-                            <label for="course" class="form-label">Course</label>
-                            <input type="text" id="course" name="course" class="form-control" required>
-                        </div>
-
                         <!-- Status ComboBox -->
                         <div class="mb-3">
                             <label for="status" class="form-label">Status</label>
