@@ -1,5 +1,5 @@
 <?php
-include('../db_connection.php');
+include('./Functions/Page1tbl.php');
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -14,8 +14,11 @@ include('../db_connection.php');
         integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
         crossorigin="anonymous"></script>
 
-    <script src="age.js"></script>
+    <script src="./Functions/age.js"></script>
     <title>PROJECT EVENT DRIVEN PROGRAMMING</title>
+
+    <!-- Include formValidation.js script -->
+    <script src="./Functions/formValidation.js"></script>
 </head>
 
 <body>
@@ -97,7 +100,7 @@ include('../db_connection.php');
 
                 <!-- Form Section -->
                 <div class="d-flex flex-column w-100" style="max-width: 28%; height: 100%;">
-                    <form class="d-flex flex-column" style="overflow-y: auto; max-height: 550px;">
+                    <form id="registrationForm" action="./Functions/manageregistration.php" method="POST" class="d-flex flex-column" style="overflow-y: auto; max-height: 550px;">
                         <div class="mb-3">
                             <label for="firstname" class="form-label">Firstname</label>
                             <input type="text" id="firstname" name="firstname" class="form-control" required>
@@ -112,7 +115,10 @@ include('../db_connection.php');
                             <label for="lastname" class="form-label">Lastname</label>
                             <input type="text" id="lastname" name="lastname" class="form-control" required>
                         </div>
-
+                        <div class="mb-3">
+                            <label for="birthday" class="form-label">Birthday</label>
+                            <input type="date" id="birthday" name="birthday" class="form-control" required>
+                        </div>
                         <div class="mb-3">
                             <label for="email" class="form-label">Email</label>
                             <input type="email" id="email" name="email" class="form-control" required>
@@ -121,16 +127,6 @@ include('../db_connection.php');
                         <div class="mb-3">
                             <label for="contact" class="form-label">Contact#</label>
                             <input type="tel" id="contact" name="contact" class="form-control" required>
-                        </div>
-
-                        <div class="mb-3">
-                            <label for="birthday" class="form-label">Birthday</label>
-                            <input type="date" id="birthday" name="birthday" class="form-control" required>
-                        </div>
-
-                        <div class="mb-3">
-                            <label for="age" class="form-label">Age</label>
-                            <input type="number" id="age" name="age" class="form-control" required>
                         </div>
                         <!-- Status ComboBox -->
                         <div class="mb-3">
@@ -143,7 +139,7 @@ include('../db_connection.php');
 
                         <!-- Register Button -->
                         <div class="mb-3">
-                            <button type="submit" class="btn btn-primary w-100">Register</button>
+                            <button type="submit" id="registerButton" class="btn btn-primary w-100">Register</button>
                         </div>
                     </form>
                 </div>
@@ -152,7 +148,8 @@ include('../db_connection.php');
     </div>
 
     <!-- Include RegNav.js at the bottom to make sure the navbar script runs correctly -->
-    <script src="RegNav.js"></script>
+    <script src="./Functions/RegNav.js"></script>
+
 </body>
 
 </html>
