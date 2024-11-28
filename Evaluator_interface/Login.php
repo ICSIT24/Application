@@ -18,7 +18,7 @@ include('./Functions/script.php');
         crossorigin="anonymous"></script>
 
     <!-- Reference your custom CSS file -->
-    <link rel="stylesheet" href="./login-style.css">
+    <link rel="stylesheet" href="styles.css">
 
     <title>PROJECT EVENT DRIVEN PROGRAMMING</title>
 </head>
@@ -32,8 +32,8 @@ include('./Functions/script.php');
             <!-- Form starts here -->
             <form action="" method="POST" onsubmit="return validateLogin()">
                 <div class="form-group">
-                    <label for="student-id">Evaluator ID:</label>
-                    <input type="text" id="student-id" name="student-id" class="form-control" required>
+                    <label for="eval-id">Evaluator ID:</label>
+                    <input type="text" id="eval-id" name="eval-id" class="form-control" required>
                 </div>
 
                 <div class="form-group">
