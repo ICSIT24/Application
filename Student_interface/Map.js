@@ -1,6 +1,18 @@
 class LeafletMap {
     constructor(containerId, center, zoom) {
-        this.map = L.map(containerId).setView(center, zoom);
+        // Initialize the map with dragging and zooming disabled
+        this.map = L.map(containerId, {
+            center: center,
+            zoom: zoom,
+            dragging: false, // Disable dragging (panning)
+            scrollWheelZoom: false, // Disable zoom with the mouse wheel
+            touchZoom: false, // Disable zoom on touch devices
+            doubleClickZoom: false, // Disable zoom on double-click
+            boxZoom: false, // Disable zoom with a box selection
+            tap: false, // Disable tap to zoom on mobile devices
+            zoomControl: false // Disable zoom control (buttons)
+        });
+
         this.initTileLayer();
     }
 

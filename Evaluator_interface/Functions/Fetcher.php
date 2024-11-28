@@ -8,7 +8,7 @@ if (isset($_SESSION['username'])) {
     $username = $_SESSION['username'];
 
     // Fetch Course_ID based on the username
-    $query = "SELECT Course_ID FROM eval_acc WHERE Username = ?";
+    $query = "SELECT Coursename FROM evalview WHERE Username = ?";
     $stmt = $conn->prepare($query);
     $stmt->bind_param("s", $username);
     $stmt->execute();
