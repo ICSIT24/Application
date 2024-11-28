@@ -29,6 +29,7 @@ function addStudentInfo($firstname, $middlename, $lastname, $birthday, $email, $
     $firstname = strtoupper($firstname);
     $middlename = strtoupper($middlename);
     $lastname = strtoupper($lastname);
+    $status = strtoupper($status);
 
     // Call the stored procedure (this assumes the stored procedure is already defined in the DB)
     $stmt = $conn->prepare("CALL AddStudentInfo(?, ?, ?, ?, ?, ?, ?)");

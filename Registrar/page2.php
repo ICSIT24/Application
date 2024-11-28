@@ -1,5 +1,5 @@
 <?php
-include('../db_connection.php');
+include('./Functions/Page2tbl.php');
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -7,96 +7,107 @@ include('../db_connection.php');
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
     <!-- Bootstrap Libraries Link -->
-
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
         crossorigin="anonymous"></script>
 
-    <!-- Additional Libraries Link -->
-
-    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
-        crossorigin="anonymous"></script>
-
-    <!-- Css and Javacript Link-->
-
-    <Link rel="stylesheet" href="./styles.css">
-
-
+    <script src="./Functions/age.js"></script>
     <title>PROJECT EVENT DRIVEN PROGRAMMING</title>
 
+    <!-- Include formValidation.js script -->
+    <script src="./Functions/formValidation.js"></script>
 </head>
 
 <body>
-    <div id="navbar-container"></div>
-    <!--Aside-->
+    <!-- Your Custom Navbar with RegNav.js -->
+    <div id="navbar-container">
+        <!-- Navbar will be handled by RegNav.js -->
+    </div>
 
-    <div style="display: flex;">
-    <div id="sidebar-container"></div>
-      
+    <!-- Main Container -->
+    <div class="d-flex vh-100">
 
-        <!--Table-->
-
-        <div class="con-table" style="flex-grow: auto; margin:2rem">
-
-            <div class="combo-box2">
-
-                <a href="contact.html" class="button3"><Data>Archive Enrollment</Data></a>
-
+        <!-- Sidebar Section (moved from second code) -->
+        <div id="sidebar-container" class="bg-dark text-white d-flex flex-column p-3" style="width: 300px;">
+            <div class="text-center mb-4">
+                <!-- Logo (smaller image) -->
+                <img src="./images/nbsc-logo.png" alt="School Logo" class="img-fluid mb-4" style="max-width: 120px;">
             </div>
 
+            <h3 class="h5 text-center">NBSC Registrar</h3>
 
-
-            <table class="table">
-                <tr class="label">
-                    <!--Row Label-->
-                    <th class="col2">Enrollment</th>
-                    <th class="col2">Semester</th>
-                    <th class="col2">Date</th>
-                    <th class="col2">Enrollees</th>
-                   
-                </tr>
-                <!--Row Contents-->
-                <tr>
-                    <td>N/A</td>
-                    <td>N/A</td>
-                    <td>N/A</td>
-                    <td>N/A</td>
-               
-                </tr>
-            </table>
-
+            <!-- Button Container -->
+            <div class="d-flex flex-column w-100 mt-3">
+                <a href="page1.php" class="btn btn-light text-dark mb-2">Student Registration</a>
+                <a href="page2.php" class="btn btn-light text-dark mb-2">Start Enrollment</a>
+                <a href="page6.html" class="btn btn-light text-dark mb-2">Clearance Distribution</a>
+                <a href="page9.html" class="btn btn-light text-dark mb-2">Archives</a>
+            </div>
         </div>
 
-        <form class="form-info" style="flex-grow: 1;">
-            <div class="margin-top">
-                <label for="firstname">School Year</label>
-                <button class="sep-button" type="submit">Start</button>
-                <input type="text" id="schoolyear" name="schoolyear" required>
+        <!-- Main Content Section (Table & Form) -->
+        <div class="flex-grow-1 p-3">
+            <!-- Row with Table and Form side by side -->
+            <div class="d-flex">
+                <!-- Table Section with scrollbars -->
+                <div class="table-responsive flex-fill me-3" style="max-height: 500px; overflow-y: auto;">
+                    <table class="table table-bordered table-striped">
+                        <thead class="table-dark">
+                            <tr>
+                                <th>Enrollment</th>
+                                <th>Semester</th>
+                                <th>Date</th>
+                                <th>Enrollees</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <?php
+                            foreach ($enrollment as $enrollments) {
+                                echo "<tr>";
+                                echo "<td>" . $enrollments['Enrollment_ID'] . "</td>";
+                                echo "<td>" . $enrollments['Semester'] . "</td>";
+                                echo "<td>" . $enrollments['Enrollment_date'] . "</td>";
+                                echo "<td>" . $enrollments['Enrolled_count'] . "</td>";
+                                echo "</tr>";
+                            }
+                            ?>
+                        </tbody>
+                    </table>
+                </div>
 
-                <label for="middlename">Semester</label>
-                <select class="input2" id="semester" name="semester" required>
-                    <option value="1">Semester 1</option>
-                    <option value="2">Semester 2</option>
-                    <option value="3">Semester 3</option>
-                </select>
-                <input type="text" id="plainfield" name="plainfield" required>
+                <!-- Form Section -->
+                <div class="d-flex flex-column w-100" style="max-width: 28%; height: 100%;">
+                    <form id="Enrollementadd" action="./Functions/Startenro.php" method="POST" class="form-info d-flex flex-column" style="overflow-y: auto; max-height: 550px;">
+                        <div class="mb-3">
+                            <label for="schoolyear" class="form-label">School Year</label>
+                            <input type="text" id="schoolyear" name="schoolyear" class="form-control" required>
+                        </div>
 
-                <label for="birthday">Enrollment Day</label>
-                <input type="date" id="Enrollment" name="Enrollment" required>
-                <input type="text" id="plainfield" name="plainfield" required>
-
+                        <div class="mb-3">
+                            <label for="semester" class="form-label">Semester</label>
+                            <select class="form-select" id="semester" name="semester" required>
+                                <option value="1">1st</option>
+                                <option value="2">2nd</option>
+                            </select>
+                        </div>
+                        <div class="mb-3">
+                            <button class="btn btn-primary" type="submit">Start</button>
+                        </div>
+                    </form>
+                </div>
             </div>
-        </form>
-
+        </div>
     </div>
+
+    <!-- Remove SideNav.js reference (no longer needed) -->
+    <!-- Removed <script src="SideNav.js"></script> here -->
+
+    <!-- Include RegNav.js at the bottom to make sure the navbar script runs correctly -->
+    <script src="./Functions/RegNav.js"></script>
+
 </body>
-<script src="RegNav.js"></script>
-<script src="SideNav.js"></script>
+
 </html>

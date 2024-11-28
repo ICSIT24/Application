@@ -1,5 +1,5 @@
 <?php
-include('./Functions/Page1tbl.php');
+include('../db_connection.php');
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -13,7 +13,6 @@ include('./Functions/Page1tbl.php');
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
         crossorigin="anonymous"></script>
-
     <script src="./Functions/age.js"></script>
     <title>PROJECT EVENT DRIVEN PROGRAMMING</title>
 
@@ -22,15 +21,10 @@ include('./Functions/Page1tbl.php');
 </head>
 
 <body>
-    <!-- Your Custom Navbar with RegNav.js -->
-    <div id="navbar-container">
-        <!-- Navbar will be handled by RegNav.js -->
-    </div>
-
-    <!-- Main Container -->
+    <!-- Sidebar Section -->
     <div class="d-flex vh-100">
 
-        <!-- Sidebar Section -->
+        <!-- Sidebar (moved from second code) -->
         <div id="sidebar-container" class="bg-dark text-white d-flex flex-column p-3" style="width: 300px;">
             <div class="text-center mb-4">
                 <!-- Logo (smaller image) -->
@@ -71,75 +65,48 @@ include('./Functions/Page1tbl.php');
                     <table class="table table-bordered table-striped">
                         <thead class="table-dark">
                             <tr>
-                                <th>Student_ID</th>
-                                <th>Name</th>
-                                <th>Age</th>
-                                <th>Birthday</th>
-                                <th>Email</th>
-                                <th>Contact#</th>
-                                <th>Status</th>
+                                <th>Enrollment</th>
+                                <th>Semester</th>
+                                <th>Date</th>
+                                <th>Enrollees</th>
                             </tr>
                         </thead>
                         <tbody>
-                            <?php
-                            foreach ($students as $student) {
-                                echo "<tr>";
-                                echo "<td>" . $student['Student_id'] . "</td>";
-                                echo "<td>" . $student['Name'] . "</td>";
-                                echo "<td class='age'></td>";  // Placeholder for age
-                                echo "<td>" . $student['Birthday'] . "</td>";
-                                echo "<td>" . $student['Email'] . "</td>";
-                                echo "<td>" . $student['Contact'] . "</td>";
-                                echo "<td>" . $student['Status'] . "</td>";
-                                echo "</tr>";
-                            }
-                            ?>
+                            <!-- Row contents - you can dynamically generate this with PHP -->
+                            <tr>
+                                <td>N/A</td>
+                                <td>N/A</td>
+                                <td>N/A</td>
+                                <td>N/A</td>
+                            </tr>
                         </tbody>
                     </table>
                 </div>
 
                 <!-- Form Section -->
                 <div class="d-flex flex-column w-100" style="max-width: 28%; height: 100%;">
-                    <form id="registrationForm" action="./Functions/manageregistration.php" method="POST" class="d-flex flex-column" style="overflow-y: auto; max-height: 550px;">
+                    <form class="form-info d-flex flex-column" style="overflow-y: auto; max-height: 550px;">
                         <div class="mb-3">
-                            <label for="firstname" class="form-label">Firstname</label>
-                            <input type="text" id="firstname" name="firstname" class="form-control" required>
+                            <label for="schoolyear" class="form-label">School Year</label>
+                            <input type="text" id="schoolyear" name="schoolyear" class="form-control" required>
                         </div>
 
                         <div class="mb-3">
-                            <label for="middlename" class="form-label">Middlename</label>
-                            <input type="text" id="middlename" name="middlename" class="form-control" required>
-                        </div>
-
-                        <div class="mb-3">
-                            <label for="lastname" class="form-label">Lastname</label>
-                            <input type="text" id="lastname" name="lastname" class="form-control" required>
-                        </div>
-                        <div class="mb-3">
-                            <label for="birthday" class="form-label">Birthday</label>
-                            <input type="date" id="birthday" name="birthday" class="form-control" required>
-                        </div>
-                        <div class="mb-3">
-                            <label for="email" class="form-label">Email</label>
-                            <input type="email" id="email" name="email" class="form-control" required>
-                        </div>
-
-                        <div class="mb-3">
-                            <label for="contact" class="form-label">Contact#</label>
-                            <input type="tel" id="contact" name="contact" class="form-control" required>
-                        </div>
-                        <!-- Status ComboBox -->
-                        <div class="mb-3">
-                            <label for="status" class="form-label">Status</label>
-                            <select id="status" name="status" class="form-select" required>
-                                <option value="married">MARRIED</option>
-                                <option value="single">SINGLE</option>
+                            <label for="semester" class="form-label">Semester</label>
+                            <select class="form-select" id="semester" name="semester" required>
+                                <option value="1">Semester 1</option>
+                                <option value="2">Semester 2</option>
+                                <option value="3">Semester 3</option>
                             </select>
                         </div>
 
-                        <!-- Register Button -->
                         <div class="mb-3">
-                            <button type="submit" id="registerButton" class="btn btn-primary w-100">Register</button>
+                            <label for="enrollmentDay" class="form-label">Enrollment Day</label>
+                            <input type="date" id="enrollmentDay" name="enrollmentDay" class="form-control" required>
+                        </div>
+
+                        <div class="mb-3">
+                            <button class="btn btn-primary" type="submit">Start</button>
                         </div>
                     </form>
                 </div>
@@ -147,9 +114,8 @@ include('./Functions/Page1tbl.php');
         </div>
     </div>
 
-    <!-- Include RegNav.js at the bottom to make sure the navbar script runs correctly -->
-    <script src="./Functions/RegNav.js"></script>
-
+    <!-- Remove SideNav.js reference -->
+    <script src="RegNav.js"></script>
 </body>
 
 </html>
