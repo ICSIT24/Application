@@ -1,42 +1,6 @@
 <?php
-// Start the session
-session_start();
-
-// Check if the user is logged in, if not, redirect to the login page
-if (!isset($_SESSION['username'])) {
-    header("Location: ../index.php");
-    exit();
-}
-
-// Include the database connection
-// Correct path to db_connection.php
-include __DIR__ . '/../db_connection.php';
-
-// Get the student ID from the session
-$username = $_SESSION['username'];
-
-// Fetch the student's name from the database based on the student ID
-$query = "SELECT Student_id, CONCAT(Firstname, ' ', Middlename, ' ', Lastname) AS Name FROM stud_info WHERE Student_id = ?";
-$stmt = $conn->prepare($query);
-$stmt->bind_param("s", $username);
-$stmt->execute();
-
-// Bind result variables for both Student_id and Name
-$stmt->bind_result($student_id, $name);  // Add $student_id to bind to the first column (Student_id)
-$stmt->fetch();
-$stmt->close();
-
-// If no name found, set a default
-if (!$name) {
-    $name = "No name found";
-}
-
-// Close the database connection safely
-if ($conn) {
-    $conn->close();
-}
+include('./Functions/Fetcher.php');
 ?>
-
 <!DOCTYPE html>
 <html lang="en" style="background-color: rgb(29, 43, 77);">
 <head>
@@ -79,13 +43,11 @@ if ($conn) {
                 </tr>
             </thead>
             <tbody>
-                <!-- Add your student rows here -->
                 <tr>
                     <td><?php echo htmlspecialchars($username); ?></td> <!-- Student ID -->
                     <td><?php echo htmlspecialchars($name); ?></td> <!-- Student Name -->
-                    <td>Freshman</td> <!-- You can modify this based on the student data -->
+                    <td>Freshman</td> <!-- Modify this based on student data -->
                 </tr>
-                <!-- More rows can be added here -->
             </tbody>
         </table>
     </div>
