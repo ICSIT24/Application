@@ -1,5 +1,5 @@
 <?php
-include('../db_connection.php');
+include('./Functions/Page1tbl.php');
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -7,168 +7,148 @@ include('../db_connection.php');
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
     <!-- Bootstrap Libraries Link -->
-
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
         crossorigin="anonymous"></script>
 
-    <!-- Additional Libraries Link -->
-
-    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
-        crossorigin="anonymous"></script>
-
-    <!-- Css and Javacript Link-->
-
-    <Link rel="stylesheet" href="./styles.css">
-    <script src="age.js"></script>
-
-
+    <script src="./Functions/age.js"></script>
     <title>PROJECT EVENT DRIVEN PROGRAMMING</title>
 
+    <!-- Include formValidation.js script -->
+    <script src="./Functions/formValidation.js"></script>
 </head>
 
 <body>
+    <!-- Your Custom Navbar with RegNav.js -->
+    <div id="navbar-container">
+        <!-- Navbar will be handled by RegNav.js -->
+    </div>
 
-    <nav class="navbar navbar-expand-lg bg-body-tertiary">
-        <div class="container-fluid">
-            <a class="school-logo" href="#">
-                <img src="./images/nbsc-logo.png" alt="Logo" width="30" height="30"
-                    class="d-inline-block align-text-top">
-                <h5>NBSC SEE</h5>
-            </a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown"
-                aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarNavDropdown">
+    <!-- Main Container -->
+    <div class="d-flex vh-100">
 
-                <li class="nav-item dropdown" style="margin-left: 1rem;">
-                    <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
-                        aria-expanded="false">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor"
-                            class="bi bi-person-circle text-light" viewBox="0 0 16 16">
-                            <path d="M11 6a3 3 0 1 1-6 0 3 3 0 0 1 6 0" />
-                            <path fill-rule="evenodd"
-                                d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8m8-7a7 7 0 0 0-5.468 11.37C3.242 11.226 4.805 10 8 10s4.757 1.225 5.468 2.37A7 7 0 0 0 8 1" />
-                        </svg>
-                    </a>
-                    <ul class="dropdown-menu text-left"
-                        style="width: 200px; padding: 1rem; position: absolute; left: -10rem;">
+        <!-- Sidebar Section -->
+        <div id="sidebar-container" class="bg-dark text-white d-flex flex-column p-3" style="width: 300px;">
+            <div class="text-center mb-4">
+                <!-- Logo (smaller image) -->
+                <img src="./images/nbsc-logo.png" alt="School Logo" class="img-fluid mb-4" style="max-width: 120px;">
+            </div>
 
-                        <li><strong>Registrar</strong></li>
-                        <hr class="dropdown-divider">
-                </li>
-                <li><a class="dropdown-item" href="./index.html">Log Out</a></li>
-                </ul>
-                </li>
+            <h3 class="h5 text-center">NBSC Registrar</h3>
+
+            <!-- Button Container -->
+            <div class="d-flex flex-column w-100 mt-3">
+                <a href="page1.php" class="btn btn-light text-dark mb-2">Student Registration</a>
+                <a href="page2.php" class="btn btn-light text-dark mb-2">Start Enrollment</a>
+                <a href="page6.html" class="btn btn-light text-dark mb-2">Clearance Distribution</a>
+                <a href="page9.html" class="btn btn-light text-dark mb-2">Archives</a>
             </div>
         </div>
-    </nav>
 
-    <!--Aside-->
-
-    <div style="display: flex;">
-        <aside class="aside">
-            <img src="./images/nbsc-logo.png" alt="School Logo">
-            <h3>NBSC Registrar</h3>
-            <div class="button-margin">
-                <a href="student-info.html" class="button1">Student Registration</a>
-                <a href="grades.html" class="button1">Start Enrollment</a>
-                <a href="schedule.html" class="button1">Clearance Distribution</a>
-                <a href="contact.html" class="button1">Archives</a>
-            </div>
-        </aside>
-
-        <!--Table-->
-
-        <div class="con-table" style="flex-grow: auto; margin:2rem">
-
-            <div class="combo-box3">
-                <input type="text" id="additionalInfo" placeholder="">
-
-                <div class="option1" style="margin-left: 1rem;">
-                    <label for="option"></label>
-                    <select id="option" name="option">
-                        <option value="fall">Option1</option>
-                    </select>
+        <!-- Main Content Section (Table & Form) -->
+        <div class="flex-grow-1 p-3">
+            <!-- Combo Box and Search Section -->
+            <div class="d-flex mb-4">
+                <input type="text" id="additionalInfo" class="form-control me-2" placeholder="Search..." style="width: 250px;">
+                <div class="me-2">
+                    <!-- Removed ComboBox with Option1 -->
                 </div>
-
-                <div class="option1" style="margin-left: 1rem;">
-                    <label for="option"></label>
-                    <select id="option" name="option">
+                <div class="me-2">
+                    <select id="option" name="option" class="form-select">
+                        <option value="fall">Personal Info</option>
                         <option value="fall">Enrollment</option>
                     </select>
                 </div>
-
-                <a href="contact.html" class="button2"><Data>Delete</Data></a>
-
             </div>
-            <table class="table">
-                <tr class="label">
-                    <th class="col2">Student_ID</th>
-                    <th class="col2">Name</th>
-                    <th class="col2">Age</th>
-                    <th class="col2">Birthday</th>
-                    <th class="col2">Email</th>
-                    <th class="col2">Contact#</th>
-                    <th class="col2">Status</th>
-                </tr>
-            
-                <?php
-                foreach ($students as $student) {
-                    echo "<tr>";
-                    echo "<td>" . $student['Student_id'] . "</td>";
-                    echo "<td>" . $student['Name'] . "</td>";
-                    echo "<td class='age'></td>";  // Placeholder for age
-                    echo "<td>" . $student['Birthday'] . "</td>";
-                    echo "<td>" . $student['Email'] . "</td>";
-                    echo "<td>" . $student['Contact'] . "</td>";
-                    echo "<td>" . $student['Status'] . "</td>";
-                    echo "</tr>";
-                }
-                ?>
-            </table>
+
+            <!-- Row with Table and Form side by side -->
+            <div class="d-flex">
+                <!-- Table Section with scrollbars -->
+                <div class="table-responsive flex-fill me-3" style="max-height: 500px; overflow-y: auto;">
+                    <table class="table table-bordered table-striped">
+                        <thead class="table-dark">
+                            <tr>
+                                <th>Student_ID</th>
+                                <th>Name</th>
+                                <th>Age</th>
+                                <th>Birthday</th>
+                                <th>Email</th>
+                                <th>Contact#</th>
+                                <th>Status</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <?php
+                            foreach ($students as $student) {
+                                echo "<tr>";
+                                echo "<td>" . $student['Student_id'] . "</td>";
+                                echo "<td>" . $student['Name'] . "</td>";
+                                echo "<td class='age'></td>";  // Placeholder for age
+                                echo "<td>" . $student['Birthday'] . "</td>";
+                                echo "<td>" . $student['Email'] . "</td>";
+                                echo "<td>" . $student['Contact'] . "</td>";
+                                echo "<td>" . $student['Status'] . "</td>";
+                                echo "</tr>";
+                            }
+                            ?>
+                        </tbody>
+                    </table>
+                </div>
+
+                <!-- Form Section -->
+                <div class="d-flex flex-column w-100" style="max-width: 28%; height: 100%;">
+                    <form id="registrationForm" action="./Functions/manageregistration.php" method="POST" class="d-flex flex-column" style="overflow-y: auto; max-height: 550px;">
+                        <div class="mb-3">
+                            <label for="firstname" class="form-label">Firstname</label>
+                            <input type="text" id="firstname" name="firstname" class="form-control" required>
+                        </div>
+
+                        <div class="mb-3">
+                            <label for="middlename" class="form-label">Middlename</label>
+                            <input type="text" id="middlename" name="middlename" class="form-control" required>
+                        </div>
+
+                        <div class="mb-3">
+                            <label for="lastname" class="form-label">Lastname</label>
+                            <input type="text" id="lastname" name="lastname" class="form-control" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="birthday" class="form-label">Birthday</label>
+                            <input type="date" id="birthday" name="birthday" class="form-control" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="email" class="form-label">Email</label>
+                            <input type="email" id="email" name="email" class="form-control" required>
+                        </div>
+
+                        <div class="mb-3">
+                            <label for="contact" class="form-label">Contact#</label>
+                            <input type="tel" id="contact" name="contact" class="form-control" required>
+                        </div>
+                        <!-- Status ComboBox -->
+                        <div class="mb-3">
+                            <label for="status" class="form-label">Status</label>
+                            <select id="status" name="status" class="form-select" required>
+                                <option value="married">MARRIED</option>
+                                <option value="single">SINGLE</option>
+                            </select>
+                        </div>
+
+                        <!-- Register Button -->
+                        <div class="mb-3">
+                            <button type="submit" id="registerButton" class="btn btn-primary w-100">Register</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
         </div>
-
-        <form class="form-info" style="flex-grow: 1;">
-            <div class="margin-top">
-                <label for="firstname">Firstname</label>
-                <button style="padding-top: 1px;height: 2rem;margin-left: 135px; top: 95px; position: absolute;" type="submit">Clear</button>
-                <input type="text" id="firstname" name="firstname" required>
-
-                <label for="middlename">Middlename</label>
-                <input class="input" type="text" id="middlename" name="middlename" required>
-
-                <label for="lastname">Lastname</label>
-                <input type="text" id="lastname" name="lastname" required>
-
-                <label for="email">Email</label>
-                <input type="email" id="email" name="email" required>
-
-                <label for="contact">Contact#</label>
-                <input type="tel" id="contact" name="contact" required>
-
-                <label for="birthday">Birthday</label>
-                <input type="date" id="birthday" name="birthday" required>
-
-                <label for="age">Age</label>
-                <input type="number" id="age" name="age" required>
-
-                <label for="course">Course</label>
-                <input type="text" id="course" name="course" required>
-            </div>
-            <button type="submit">Register</button>
-        </form>
-
     </div>
 
+    <!-- Include RegNav.js at the bottom to make sure the navbar script runs correctly -->
+    <script src="./Functions/RegNav.js"></script>
 
 </body>
 

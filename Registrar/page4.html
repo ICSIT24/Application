@@ -33,55 +33,10 @@
 
 <body>
 
-    <nav class="navbar navbar-expand-lg bg-body-tertiary">
-        <div class="container-fluid">
-            <a class="school-logo" href="#">
-                <img src="./images/nbsc-logo.png" alt="Logo" width="30" height="30"
-                    class="d-inline-block align-text-top">
-                <h5>NBSC SEE</h5>
-            </a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown"
-                aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarNavDropdown">
-
-                <li class="nav-item dropdown" style="margin-left: 1rem;">
-                    <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
-                        aria-expanded="false">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor"
-                            class="bi bi-person-circle text-light" viewBox="0 0 16 16">
-                            <path d="M11 6a3 3 0 1 1-6 0 3 3 0 0 1 6 0" />
-                            <path fill-rule="evenodd"
-                                d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8m8-7a7 7 0 0 0-5.468 11.37C3.242 11.226 4.805 10 8 10s4.757 1.225 5.468 2.37A7 7 0 0 0 8 1" />
-                        </svg>
-                    </a>
-                    <ul class="dropdown-menu text-left"
-                        style="width: 200px; padding: 1rem; position: absolute; left: -10rem;">
-
-                        <li><strong>Registrar</strong></li>
-                        <hr class="dropdown-divider">
-                </li>
-                <li><a class="dropdown-item" href="./index.html">Log Out</a></li>
-                </ul>
-                </li>
-            </div>
-        </div>
-    </nav>
-
+    <div id="navbar-container"></div>
     <!--Aside-->
-
     <div style="display: flex;">
-        <aside class="aside2">
-            <img src="./images/nbsc-logo.png" alt="School Logo">
-            <h3>NBSC Registrar</h3>
-            <div class="button-margin">
-                <a href="student-info.html" class="button1">Student Registration</a>
-                <a href="grades.html" class="button1">Start Enrollment</a>
-                <a href="schedule.html" class="button1">Clearance Distribution</a>
-                <a href="contact.html" class="button1">Archives</a>
-            </div>
-        </aside>
+        <div id="sidebar-container"></div>
 
         <!--Table-->
 
@@ -116,5 +71,6 @@
 
 
 </body>
-
+<script src="RegNav.js"></script>
+<script src="SideNav.js"></script>
 </html>
