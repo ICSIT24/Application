@@ -135,8 +135,8 @@ class Navbar {
         dropdownMenu.classList.add('dropdown-menu');
 
         const menuItems = [
-            { name: 'User', link: '/Student_interface/Home.html' },
-            { name: 'Registrar', link: '/Registrar/page1.html' },
+            { name: 'User', link: '../Student_interface/Home.html' },
+            { name: 'Registrar', link: '../Registrar/page1.html' },
             { name: 'SAS', link: 'sas.html' },
             { name: 'ASO', link: 'aso.html' },
             { name: 'Medical', link: 'medical.html' },
