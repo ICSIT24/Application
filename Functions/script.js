@@ -83,7 +83,7 @@ function handleLogin(event) {
         localStorage.setItem('loggedInStudent', JSON.stringify(student));
 
         // Redirect to Home.html
-        window.location.href = "/Student_interface/Home.html";
+        window.location.href = "../Student_interface/Home.html";
     } else {
         alert("Invalid Student ID or Password. Please try again.");
     }

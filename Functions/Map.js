@@ -22,11 +22,11 @@ class LeafletMap {
 
     addMarker(lat, lng, classroom, status) {
         const icons = {
-            red: 'images/red-location-marker-icon-on-a-white-background-isolated-transparent-png.png',
-            green: 'images/3d-realistic-icon-style-green-glossy-location-map-pin-gps-pointer-markers-illustration-for-destination-geo-tag-isolated-transparent-png.png',
-            blue: 'images/bright-blue-location-marker-on-a-white-background-isolated-transparent-png.png',
+            red: '../images/red-location-marker-icon-on-a-white-background-isolated-transparent-png.png',
+            green: '../images/3d-realistic-icon-style-green-glossy-location-map-pin-gps-pointer-markers-illustration-for-destination-geo-tag-isolated-transparent-png.png',
+            blue: '../images/bright-blue-location-marker-on-a-white-background-isolated-transparent-png.png',
         };
-
+        
         const icon = L.icon({
             iconUrl: icons[status] || icons.red,  // Default to red if no status is matched
             iconSize: [32, 32],  // Adjust this size if necessary, based on your image dimensions
@@ -40,7 +40,7 @@ class LeafletMap {
 
     loadMarkers() {
         const markers = [
-            { latitude: 8.3605454, longitude: 124.8675960, classroom: "SAS", status: "blue" },
+            { latitude: 8.3605454, longitude: 124.8675960, classroom: "SAS", status: "red" },
             { latitude: 8.359179, longitude: 124.868468, classroom: "Clinic", status: "red" },
             { latitude: 8.3604764, longitude: 124.86752632, classroom: "ASO", status: "red" },
             { latitude: 8.3596696, longitude: 124.8691893, classroom: "IT Evaluation and Dean", status: "red" },

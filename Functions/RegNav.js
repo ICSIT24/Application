@@ -43,7 +43,7 @@ class Navbar {
         logoLink.href = '#';
 
         const logoImg = document.createElement('img');
-        logoImg.src = './images/nbsc-logo.png';
+        logoImg.src = '../images/nbsc-logo.png';
         logoImg.alt = 'Logo';
         logoImg.width = 20;
         logoImg.height = 20;
