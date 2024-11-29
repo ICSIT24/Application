@@ -1,81 +1,63 @@
 class Navbar {
     constructor() {
-        // Initialize properties if needed (e.g., settings, logo, etc.)
-        this.navbarContainer = document.getElementById('navbar-container');
+        this.navbarContainer = document.getElementById('navbar');
     }
 
-    // Method to create the entire navbar
     createNavbar() {
         document.addEventListener('DOMContentLoaded', () => {
-            // Create the navbar element
             const navbar = this.createNavbarElement();
-
-            // Create the container div (Bootstrap's default fixed-width container)
             const container = this.createContainer();
 
-            // Create the logo and school name
             const logoLink = this.createLogo();
-
-            // Create the navbar-toggler button for mobile view (hamburger icon)
             const navbarToggler = this.createNavbarToggler();
-
-            // Create the collapse navbar-collapse div
             const collapseDiv = this.createCollapseDiv();
 
-            // Append the logo, toggler, and collapse div to the container
             container.appendChild(logoLink);
             container.appendChild(navbarToggler);
             container.appendChild(collapseDiv);
 
-            // Append the container to the navbar
             navbar.appendChild(container);
-
-            // Finally, append the navbar to the navbar container in the DOM
             this.navbarContainer.appendChild(navbar);
         });
     }
 
-    // Method to create the navbar element
     createNavbarElement() {
         const navbar = document.createElement('nav');
         navbar.classList.add('navbar', 'navbar-expand-lg', 'navbar-dark');
-        navbar.style.backgroundColor = '#003366';  // Dark blue background
-        navbar.style.paddingTop = '0.1rem';  // Reduced padding
-        navbar.style.paddingBottom = '0.1rem';  // Reduced padding
-        navbar.style.fontSize = '0.7rem';  // Reduced font size
+        navbar.style.backgroundColor = '#003366';
+        navbar.style.paddingTop = '0.1rem';
+        navbar.style.paddingBottom = '0.1rem';
+        navbar.style.fontSize = '0.7rem';
         return navbar;
     }
 
-    // Method to create the container div inside navbar
     createContainer() {
         const container = document.createElement('div');
         container.classList.add('container');
         return container;
     }
 
-    // Method to create the logo with school name
     createLogo() {
         const logoLink = document.createElement('a');
         logoLink.classList.add('navbar-brand');
         logoLink.href = '#';
 
         const logoImg = document.createElement('img');
-        logoImg.src = './images/nbsc-logo.png';  // Adjust to your logo source
+        logoImg.src = '../images/nbsc-logo.png';
         logoImg.alt = 'Logo';
-        logoImg.width = 20;  // Smaller logo size
-        logoImg.height = 20;  // Smaller logo size
+        logoImg.width = 20;
+        logoImg.height = 20;
         logoImg.classList.add('d-inline-block', 'align-text-top');
 
         const schoolName = document.createElement('h5');
-        schoolName.textContent = 'NBSC SEE';
-        schoolName.style.fontSize = '0.7rem';  // Reduced font size
+        schoolName.textContent = 'Evaluation';
+        schoolName.style.fontSize = '0.7rem';
 
         logoLink.appendChild(logoImg);
         logoLink.appendChild(schoolName);
         return logoLink;
     }
 
-    // Method to create the navbar-toggler button for mobile view
     createNavbarToggler() {
         const navbarToggler = document.createElement('button');
         navbarToggler.classList.add('navbar-toggler');
@@ -93,24 +75,21 @@ class Navbar {
         return navbarToggler;
     }
 
-    // Method to create the collapse div
     createCollapseDiv() {
         const collapseDiv = document.createElement('div');
         collapseDiv.classList.add('collapse', 'navbar-collapse');
         collapseDiv.id = 'navbarSupportedContent';
 
-        // Add the user profile dropdown to the collapse div
         const userDropdownLi = this.createUserDropdown();
         collapseDiv.appendChild(userDropdownLi);
 
         return collapseDiv;
     }
 
-    // Method to create the user profile dropdown
     createUserDropdown() {
         const userDropdownLi = document.createElement('li');
         userDropdownLi.classList.add('nav-item', 'dropdown');
-        userDropdownLi.style.marginLeft = 'auto';  // Push to the right side
+        userDropdownLi.style.marginLeft = 'auto';
 
         const dropdownLink = document.createElement('a');
         dropdownLink.classList.add('nav-link', 'dropdown-toggle');
@@ -123,14 +102,12 @@ class Navbar {
         dropdownLink.appendChild(userIcon);
 
         const dropdownMenu = this.createDropdownMenu();
-
         userDropdownLi.appendChild(dropdownLink);
         userDropdownLi.appendChild(dropdownMenu);
 
         return userDropdownLi;
     }
 
-    // Method to create the user icon (SVG)
     createUserIcon() {
         const userIcon = document.createElementNS('http://www.w3.org/2000/svg', 'svg');
         userIcon.setAttribute('xmlns', 'http://www.w3.org/2000/svg');
@@ -153,32 +130,29 @@ class Navbar {
         return userIcon;
     }
 
-    // Method to create the dropdown menu for the user profile
     createDropdownMenu() {
         const dropdownMenu = document.createElement('ul');
         dropdownMenu.classList.add('dropdown-menu');
 
-        const profileItem = document.createElement('li');
-        const profileLink = document.createElement('a');
-        profileLink.classList.add('dropdown-item');
-        profileLink.href = '#';
-        profileLink.textContent = 'Profile';
-        profileItem.appendChild(profileLink);
+        const menuItems = [
+            { name: 'User', link: '../Student_interface/Home.html' },
+            { name: 'Registrar', link: '../Registrar/page1.html' },
+            { name: 'About us', link: 'https://icsit24.github.io/NBIT/about.html' }
+        ];
 
-        const logoutItem = document.createElement('li');
-        const logoutLink = document.createElement('a');
-        logoutLink.classList.add('dropdown-item');
-        logoutLink.href = './index.html';  // Link to logout page
-        logoutLink.textContent = 'Log Out';
-        logoutItem.appendChild(logoutLink);
-
-        dropdownMenu.appendChild(profileItem);
-        dropdownMenu.appendChild(logoutItem);
+        menuItems.forEach((item) => {
+            const menuItem = document.createElement('li');
+            const menuLink = document.createElement('a');
+            menuLink.classList.add('dropdown-item');
+            menuLink.href = item.link;  // Use the specific link
+            menuLink.textContent = item.name;
+            menuItem.appendChild(menuLink);
+            dropdownMenu.appendChild(menuItem);
+        });
 
         return dropdownMenu;
     }
 }
 
-// Create an instance of the Navbar class and call createNavbar
 const navbar = new Navbar();
 navbar.createNavbar();
