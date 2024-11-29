@@ -137,12 +137,7 @@ class Navbar {
         const menuItems = [
             { name: 'User', link: '../Student_interface/Home.html' },
             { name: 'Registrar', link: '../Registrar/page1.html' },
-            { name: 'SAS', link: 'sas.html' },
-            { name: 'ASO', link: 'aso.html' },
-            { name: 'Medical', link: 'medical.html' },
-            { name: 'Evaluator', link: 'evaluator.html' },
-            { name: 'Billing', link: 'billing.html' },
-            { name: 'About us', link: 'billing.html' }
+            { name: 'About us', link: 'https://icsit24.github.io/NBIT/about.html' }
         ];
 
         menuItems.forEach((item) => {
