@@ -38,6 +38,21 @@ class LeafletMap {
         marker.bindPopup(classroom);
     }
 
+    // Updates the next status to "Next" if the current one is "Signed"
+    updateClearanceStatus(clearanceData) {
+        const clearanceOrder = ["SAS", "ASO", "Medical", "Evaluator", "Billing", "Registrar"];
+        for (let i = 0; i < clearanceOrder.length; i++) {
+            const currentStatus = clearanceOrder[i];
+            const nextStatus = clearanceOrder[i + 1];
+
+            if (clearanceData[currentStatus] === "Signed" && nextStatus) {
+                if (clearanceData[nextStatus] === "Unsigned" || !clearanceData[nextStatus]) {
+                    clearanceData[nextStatus] = "Next";
+                }
+            }
+        }
+    }
+
     loadMarkers() {
         // Step 1: Get the logged-in student from localStorage
         const loggedInStudent = JSON.parse(localStorage.getItem('loggedInStudent'));
@@ -57,7 +72,14 @@ class LeafletMap {
 
         const clearanceData = student.clearanceData || {};
 
-        // Step 3: Define the marker data based on clearance status
+        // Step 3: Update the clearance statuses
+        this.updateClearanceStatus(clearanceData);
+
+        // Save the updated clearance data back to localStorage
+        student.clearanceData = clearanceData;
+        localStorage.setItem('students', JSON.stringify(storedStudents));
+
+        // Step 4: Define the marker data based on clearance status
         const markers = [
             { latitude: 8.3605454, longitude: 124.8675960, classroom: "SAS", status: clearanceData.SAS || 'Next' },
             { latitude: 8.359179, longitude: 124.868468, classroom: "Clinic", status: clearanceData.Medical || 'Next' },
@@ -67,7 +89,7 @@ class LeafletMap {
             { latitude: 8.3593220, longitude: 124.8691061, classroom: "Registrar", status: clearanceData.Registrar || 'Next' }
         ];
 
-        // Step 4: Loop through and add markers based on student clearance status
+        // Step 5: Loop through and add markers based on student clearance status
         markers.forEach(marker => {
             this.addMarker(marker.latitude, marker.longitude, marker.classroom, this.getPinColor(marker.status));
         });
