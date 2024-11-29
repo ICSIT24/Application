@@ -47,12 +47,12 @@ include('./Functions/Fetcher.php');
                         </thead>
                         <tbody>
                             <tr>
-                            <td><?php echo $course_id; ?></td> <!-- Dynamically displaying Course_ID -->
-<td><?php echo $enrollment_id; ?></td> <!-- Dynamically displaying Enrollment_ID -->
-<td>
-    <!-- Button: Join (Disabled by default or enabled based on enrollment ID) -->
-    <button id="join-button" class="btn btn-primary ms-3 py-1 w-auto" <?php echo $join_button_disabled; ?>>Join</button>
-</td>
+                                <td><?php echo $course_id; ?></td> <!-- Dynamically displaying Course_ID -->
+                                <td><?php echo $enrollment_id; ?></td> <!-- Dynamically displaying Enrollment_ID -->
+                                <td>
+                                    <!-- Button: Join (Disabled by default) -->
+                                    <button id="join-button" class="btn btn-primary ms-3 py-1 w-auto" <?php echo $join_button_disabled; ?>>Join</button>
+                                </td>
                             </tr>
                             <!-- More rows can be dynamically added here -->
                         </tbody>

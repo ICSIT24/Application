@@ -1,4 +1,5 @@
 <?php
+session_start(); 
 // Include the database connection and the fetch_students function
 include('C:/xampp/htdocs/ICSIT24/Application/db_connection.php');
 

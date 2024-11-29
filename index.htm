@@ -1,6 +1,3 @@
-<?php
-include("./Student_interface/Functions/script.php");
-?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -13,13 +10,8 @@ include("./Student_interface/Functions/script.php");
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
         crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
-        crossorigin="anonymous"></script>
-    
-    <!-- CSS and Javascript Link -->
+
+    <!-- CSS -->
     <link rel="stylesheet" href="./Student_interface/login-style.css">
     <title>PROJECT EVENT DRIVEN PROGRAMMING</title>
 </head>
@@ -28,18 +20,20 @@ include("./Student_interface/Functions/script.php");
     <div class="login-container">
         <h5>Student Enrollment Evaluation</h5>
         <img src="./images/nbsc-logo.png" alt="School Logo" class="school-logo">
-        <form method="POST"> <!-- Action to the login processing script -->
+        <form onsubmit="handleLogin(event)"> <!-- Bind form submission to handleLogin -->
             <label for="student-id">Student ID:</label>
             <input type="text" id="student-id" name="student-id" required>
             <label for="password">Password:</label>
             <input type="password" id="password" name="password" required>
             <div>
                 <input type="checkbox" id="show-password" onclick="togglePasswordVisibility()">
-                <h4>Show Password</h4>
+                <label for="show-password">Show Password</label>
             </div>
-            <button type="submit">Login</button>
+            <button type="submit" class="btn btn-primary">Login</button>
         </form>
     </div>
+    <!-- Script Reference -->
+    <script src="./Student_interface/Functions/script.js" defer></script>
 </body>
 
 </html>

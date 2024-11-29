@@ -1,4 +1,5 @@
 <?php
+session_start(); 
 include('./Functions/Page1tbl.php');
 ?>
 <!DOCTYPE html>

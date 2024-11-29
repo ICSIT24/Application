@@ -1,6 +1,16 @@
 class LeafletMap {
     constructor(containerId, center, zoom) {
-        this.map = L.map(containerId).setView(center, zoom);
+        // Initialize the map with unzoomable and unpannable settings
+        this.map = L.map(containerId, {
+            center: center,
+            zoom: zoom,
+            dragging: false, // Disable dragging
+            scrollWheelZoom: false, // Disable zooming with mouse wheel
+            touchZoom: false, // Disable zooming with touch gestures
+            doubleClickZoom: false, // Disable zooming on double click
+            boxZoom: false, // Disable zooming with box
+            keyboard: false // Disable keyboard zooming
+        });
         this.initTileLayer();
     }
 
@@ -30,7 +40,6 @@ class LeafletMap {
         // Create a marker with the custom icon and bind a popup
         const marker = L.marker([lat, lng], { icon }).addTo(this.map);
         marker.bindPopup(classroom);
-
     }
 
     // Load markers from a JSON source
