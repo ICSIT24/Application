@@ -15,7 +15,7 @@ class Student {
             Evaluator: 'Unsigned',
             Billing: 'Unsigned',
             Registrar: 'Unsigned',
-            DateSigned: ''
+            DateSigned: 'Incomplete'
         };
     }
 
@@ -75,16 +75,19 @@ class StudentManager {
         const student = this.findStudent(studentId);
         if (student) {
             student.createClearance();
-            console.log(`Clearance created for Student ID: ${studentId}`);
+            // Using the Alert class to show a success message
+            const alert = new Alert();
+            alert.showAlert('Clearance created for Student ID: ' + studentId, 'success');
             this.saveStudentsToStorage();
             return student.getClearanceData();
         } else {
-            console.log("Student not found!");
+            // Using the Alert class to show an error message
+            const alert = new Alert();
+            alert.showAlert("Student not found!", 'danger');
             return null;
         }
     }
 
-    // Populate the table when the page loads or refreshes
     populateTable() {
         const tableBody = document.querySelector("#student-table-body");
         tableBody.innerHTML = ""; // Clear any existing rows
@@ -109,6 +112,9 @@ if (!studentManager.findStudent("2023176")) {
 }
 if (!studentManager.findStudent("2023177")) {
     studentManager.addStudent("2023177", "Shiela Idul Dulshie", "Freshman");
+}
+if (!studentManager.findStudent("2023178")) {
+    studentManager.addStudent("2023178", "Apollo Quibs Quiboloy", "Freshman");
 }
 
 // Event listener for "Create Clearance" button

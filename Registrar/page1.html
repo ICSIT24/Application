@@ -16,6 +16,8 @@
 </head>
 
 <body>
+    <div id="alert-container" class="position-fixed top-0 start-50 translate-middle-x z-index-10"></div>
+
     <!-- Your Custom Navbar with RegNav.js -->
     <div id="navbar">
         <!-- Navbar will be handled by RegNav.js -->
@@ -37,11 +39,9 @@
             <div class="d-flex flex-column w-100 mt-3">
                 <input type="text" id="additionalInfo" class="form-control mb-2" placeholder="Search...">
                 <!-- Create Clearance Button -->
-                <button class="btn btn-light text-dark" id="createClearanceBtn">Create Clearance</button>
+                <button class="btn btn-light text-dark" id="createClearanceBtn">Create Enrollment Slip</button>
                 <!-- Signed Button -->
                 <button class="btn btn-success text-white mt-2" id="markSignedBtn">Mark as Signed</button>
-                <!-- Truncate Button -->
-                <button class="btn btn-danger text-white mt-2" id="truncateClearanceBtn">Truncate Clearance</button>
             </div>
         </div>
 
@@ -74,8 +74,9 @@
     </div>
 
     <!-- Include RegNav.js at the bottom to make sure the navbar script runs correctly -->
-    <script src="../RegNav.js"></script>
+    <script src="../Alert.js"></script>
     <script src="../clearance.js"></script>
+    <script src="../RegNav.js"></script>
 </body>
 
 </html>

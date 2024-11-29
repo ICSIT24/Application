@@ -67,6 +67,7 @@ const studentManager = new StudentManager();
 // Add students
 studentManager.addStudent("2023176", "Arky Roel Balaga", "Freshman", "0955955260");
 studentManager.addStudent("2023177", "Shiela Idul Dulshie", "Freshman", "09363066170");
+studentManager.addStudent("2023178", "Apollo Quibs Quiboloy", "Freshman", "09363066171");
 
 // Function to handle login
 function handleLogin(event) {
