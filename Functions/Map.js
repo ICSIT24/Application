@@ -35,7 +35,15 @@ class LeafletMap {
         });
 
         const marker = L.marker([lat, lng], { icon }).addTo(this.map);
-        marker.bindPopup(classroom);
+
+        // Bind a popup to the marker
+        const popupContent = (status === 'blue') ? "Here Next" : classroom;
+        marker.bindPopup(popupContent);
+
+        // Automatically open the popup if the pin color is blue
+        if (status === 'blue') {
+            marker.openPopup();
+        }
     }
 
     // Updates the next status to "Next" if the current one is "Signed"

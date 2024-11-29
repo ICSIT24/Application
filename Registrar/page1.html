@@ -29,7 +29,7 @@
         <div id="sidebar-container" class="bg-dark text-white d-flex flex-column p-3" style="width: 300px;">
             <div class="text-center mb-4">
                 <!-- Logo (smaller image) -->
-                <img src="./images/nbsc-logo.png" alt="School Logo" class="img-fluid mb-4" style="max-width: 120px;">
+                <img src="../images/nbsc-logo.png" alt="School Logo" class="img-fluid mb-4" style="max-width: 120px;">
             </div>
 
             <h3 class="h5 text-center">NBSC Registrar</h3>
@@ -39,8 +39,14 @@
                 <input type="text" id="additionalInfo" class="form-control mb-2" placeholder="Search...">
                 <!-- Create Clearance Button -->
                 <button class="btn btn-light text-dark" id="createClearanceBtn">Create Enrollment Slip</button>
-                <!-- Signed Button -->
-                <button class="btn btn-success text-white mt-2" id="markSignedBtn">Mark as Signed</button>
+                
+                <!-- Signed Buttons with unique classes -->
+                <button class="btn btn-success text-white mt-2 status-btn" data-status="SAS">SAS Signed</button>
+                <button class="btn btn-success text-white mt-2 status-btn" data-status="ASO">ASO Signed</button>
+                <button class="btn btn-success text-white mt-2 status-btn" data-status="Medical">Medical Signed</button>
+                <button class="btn btn-success text-white mt-2 status-btn" data-status="Evaluator">Evaluator Signed</button>
+                <button class="btn btn-success text-white mt-2 status-btn" data-status="Billing">Billing Signed</button>
+                <button class="btn btn-success text-white mt-2 status-btn" data-status="Registrar">Registrar Signed</button>
             </div>
         </div>
 
@@ -76,7 +82,7 @@
     <script src="../Functions/Alert.js"></script>
     <script src="../Functions/clearance.js"></script>
     <script src="../Functions/RegNav.js"></script>
-    <script src="..Functions/sortReg.js"></script> <!-- The script for sorting table -->
-
+    <script src="../Functions/UpdateClearance.js"></script> <!-- Updated script for managing statuses -->
+    <script src="../Functions/sortReg.js"></script> <!-- Student Table sorting and filtering -->
 </body>
 </html>
